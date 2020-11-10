@@ -26,7 +26,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`HeY! Please don't spam. Wait for my master's approval 🙃\nMessage remaining:1 \n\n`")
+    "Hello! Are you really here because I allowed you or asked you to PM ?\n\n"
+    "If not, mention your purpose to message me with the Group Name ! I haven't approved you to PM yet and won't do till I don't find you as a cool person. "
+    "Wait for me to look into your existance, before I allow you to my PMs.\n\n"
+    "Until then, Don't spam my PM, you'll get blocked and will be sent to a shithole full of spammers! Idc K thnx bye.")
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -77,8 +80,8 @@ async def permitpm(event):
 
                 if COUNT_PM[event.chat_id] > 2:
                     await event.respond(
-                        "`You were spamming my pm dude.`\n"
-                        "`You have been BLOCKED and reported as SPAM now. JUST FUCK OFF 🖕.`"
+                      "`Great! You were spamming my PM, which I didn't like.`\n"
+                        "`You have been BLOCKED and reported as SPAM, until further notice.`"
                     )
 
                     try:
@@ -193,7 +196,7 @@ async def approvepm(apprvpm):
         await apprvpm.edit("`User may already be approved.`")
         return
 
-    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM!`")
+    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM! Be Friendly && Don't be a Snake. Kbye``")
 
     async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
                                                       from_user='me',
